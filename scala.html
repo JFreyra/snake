@@ -78,7 +78,7 @@ At the root, the language's scalability is the result of a careful integration o
 <div class="row">
   <div class="columns small-12">
 
-<div id="object" class="columns medium-6" data-something>
+<div id="compatibility" class="columns medium-6" data-something>
 
 <h1>Compatibiltiy</h1>
 <p>
@@ -95,6 +95,29 @@ The use of the Java compiler within the Scala compiler allows for this.
   and the Play web, offer dual APIs for Java and Scala as well.
 </p>
 
+</div>
+
+<div class="columns medium-6 right" data-sticky-container>
+  <div class="sticky is-anchored is-at-top" data-sticky data-anchor="compatibility">
+
+    <ul class="accordion" data-accordion>
+      <li class="accordion-item is-active" data-accordion-item>
+	<a href="#" class="accordion-title">Java</a>
+	<div class="accordion-content" data-tab-content>
+	<p><textarea spellcheck="false" id="area5">import static scala.collection.JavaConversions.asJavaCollection;&#13public class App {&#13&#09public List<Author> loadAuthorsFromFile(File file) {&#13&#09&#09return new ArrayList<Author>(asJavaCollection(&#13&#09&#09&#09Author.loadAuthorsFromFile(file)));&#13&#09}&#13&#09public void sortAuthors(List<Author> authors) {&#13&#09&#09Collections.sort(authors);&#13&#09}&#13&#09public void displaySortedAuthors(File file) {&#13&#09&#09List<Author> authors = loadAuthorsFromFile(file);&#13&#09&#09sortAuthors(authors);&#13&#09&#09for (Author author : authors) {&#13&#09&#09&#09System.out.println(&#13&#09&#09&#09&#09author.lastName() + ", " + author.firstName());&#13&#09&#09}&#13&#09}&#13}</textarea></p>
+	<p><a class="button copy" id="5">Copy</a></p>
+	</div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+	<a href="#" class="accordion-title">Scala</a>
+	<div class="accordion-content" data-tab-content>
+	<p><textarea spellcheck="false" id="area6">class Author(val firstName: String, val lastName: String) extends Comparable[Author] {&#13&#09override def compareTo(that: Author) = {&#13&#09&#09val lastNameComp = this.lastName compareTo that.lastName&#13&#09&#09if (lastNameComp != 0) lastNameComp&#13&#09&#09else this.firstName compareTo that.firstName&#13&#09}&#13}&#13object Author {&#13&#09def loadAuthorsFromFile(file: java.io.File): List[Author] = ???&#13}</textarea></p>
+	<p><a class="button copy" id="6">Copy</a></p>
+	</div>
+      </li>
+    </ul>
+
+  </div>
 </div>
 
   </div>

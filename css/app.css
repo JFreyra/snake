@@ -5,6 +5,7 @@ p {
 textarea {
     font-family: monospace;
     font-size: 100%;
+    tab-size: 4;
     width: 1000px;
     height: 150px;
     white-space: nowrap;
