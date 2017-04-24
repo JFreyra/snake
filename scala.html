@@ -31,10 +31,10 @@ At the root, the language's scalability is the result of a careful integration o
 	</div>
 	<div class="columns medium-6 right" data-sticky-container>
 	  <div class="sticky is-anchored is-at-top" data-sticky data-anchor="intro">
-            <p><textarea spellcheck="false">These boxes will have code to copy. Top is Java syntax,</textarea></p>
-	    <p><a class="button copy">Copy</a></p>
-	    <p><textarea spellcheck="false">Bottom is Scala! Press the buttons below the box to copy the code!</textarea></p>
-	    <p><a class="button copy">Copy</a></p>
+            <p><textarea spellcheck="false" id="area1">These boxes will have code to copy. Top is Java syntax,</textarea></p>
+	    <p><a class="button copy" id="1">Copy</a></p>
+	    <p><textarea spellcheck="false" id="area2">Bottom is Scala! Press the buttons below the box to copy the code!</textarea></p>
+	    <p><a class="button copy" id="2">Copy</a></p>
 	  </div>
 	</div>
 
@@ -60,11 +60,11 @@ At the root, the language's scalability is the result of a careful integration o
 
 	<div class="columns medium-6 right" data-sticky-container>
 	  <div class="sticky is-anchored is-at-top" data-sticky data-anchor="object">
-            <p><textarea spellcheck="false">List<Person> people;&#13List<Person> minors = new ArrayList<Person>(people.size());&#13List<Person> adults = new ArrayList<Person>(people.size());&#13for (Person person : people) {&#13&#09if (person.getAge() < 18)&#13&#09&#09minors.add(person);&#13&#09else&#13&#09&#09adults.add(person);&#13}
+            <p><textarea spellcheck="false" id="area3">List<Person> people;&#13List<Person> minors = new ArrayList<Person>(people.size());&#13List<Person> adults = new ArrayList<Person>(people.size());&#13for (Person person : people) {&#13&#09if (person.getAge() < 18)&#13&#09&#09minors.add(person);&#13&#09else&#13&#09&#09adults.add(person);&#13}
 	    </textarea></p>
-	    <p><a class="button copy">Copy</a></p>
-	    <p><textarea spellcheck="false">val people: Array[Person]&#13val (minors, adults) = people partition (_.age < 18)</textarea></p>
-	    <p><a class="button copy">Copy</a></p>
+	    <p><a class="button copy" id="3">Copy</a></p>
+	    <p><textarea spellcheck="false" id="area4">val people: Array[Person]&#13val (minors, adults) = people partition (_.age < 18)</textarea></p>
+	    <p><a class="button copy" id="4">Copy</a></p>
 	  </div>
 	</div>
 	
@@ -74,9 +74,7 @@ At the root, the language's scalability is the result of a careful integration o
     <script type="text/javascript" src="js/vendor/jquery.js"></script>
     <!-- this will include every plugin and utility required by Foundation -->
     <script type="text/javascript" src="js/vendor/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
+    <script type="text/javascript" src="js/app.js"></script>
 
   </body>
 </html>
