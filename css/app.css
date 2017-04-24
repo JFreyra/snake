@@ -9,3 +9,12 @@ textarea {
     height: 150px;
     white-space: nowrap;
 }
+
+body{
+  background: #EDB6B6;
+}
+
+#spiral{
+  width:60px;
+  height:90px;
+}
