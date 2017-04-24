@@ -30,6 +30,14 @@ var applyCopyFunc = function(){
 	    i.addEventListener('click',function(event){
 		var area = document.getElementById("area"+i.id);
 		console.log(area);
+		area.select();
+		
+    		try {
+    	    	    var success = document.execCommand('copy');
+    	    	    success ? console.log("copied!") : console.log("failed to copy");
+    		} catch(err){
+    	    	    console.log(err.message);
+    		}
 	    });
 	};
     };
